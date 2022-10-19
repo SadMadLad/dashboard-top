@@ -1,0 +1,349 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+:root {
+  --blue: #1992d4;
+  --yellow: #f0b429;
+  --gray: #cdd2d9;
+  --silver: #e2e8f0;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* My CSS */
+
+/*Some defaults*/
+
+h1 {
+  font-size: 3.2vmin;
+  font-weight: 800;
+}
+
+/*Basic Layout*/
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  grid-template-rows: 1fr 7fr;
+}
+#sidebar {
+  grid-row: 1 / 3;
+  grid-column: 1;
+
+  background-color: var(--blue);
+}
+#dashboard {
+  height: 100%;
+  width: 100%;
+
+  grid-row: 1/3;
+  grid-column: 2;
+
+  background-color: var(--silver);
+}
+
+/*Sidebar Styling*/
+#sidebar > header {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  height: 10%;
+  width: auto;
+
+  /* border: 1px peru solid; */
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  margin: 50px 0;
+}
+.option {
+  display: flex;
+  gap: 20px;
+
+  color: white;
+  font-weight: 600;
+  font-size: 2.25vmin;
+
+  padding: 0 0 0 20px;
+}
+
+/*Dashboard Styling*/
+
+/*Header*/
+#dashboard > header {
+  display: flex;
+  flex-direction: column;
+
+  width: auto;
+  height: 20%;
+
+  background-color: white;
+  box-shadow: 0 4px 0 var(--gray);
+}
+/*Header Top*/
+#dashboard > header > .header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 35%;
+  width: auto;
+}
+.header-top > div {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  padding: 0 30px;
+}
+.header-top > .account {
+  align-items: center;
+
+  padding-right: 30px;
+  font-weight: 700;
+  font-size: 25px;
+}
+input {
+  height: 30px;
+  width: 500px;
+
+  border: 0;
+  background-color: var(--silver);
+  border-radius: 30px;
+}
+input:hover {
+  border: var(--gray) 2px solid;
+}
+
+/*Header Bottom*/
+#dashboard > header > .header-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 65%;
+  width: auto;
+}
+.profile {
+  display: grid;
+  grid-template-areas: "x y";
+
+  gap: 7.5px;
+  padding-left: 25px;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7.5px;
+  grid-area: y;
+  justify-content: center;
+}
+.profile > .details > p {
+  margin: 0;
+
+  font-size: 12.5px;
+  font-weight: 800;
+}
+.profile > .details > h5 {
+  font-size: 25px;
+  font-weight: 800;
+}
+.buttons {
+  display: flex;
+  gap: 20px;
+
+  padding-right: 30px;
+}
+.buttons > button {
+  height: 40px;
+  width: 90px;
+  border: none;
+
+  color: white;
+  background-color: var(--blue);
+  border-radius: 20px;
+  font-weight: 900;
+  font-size: 15px;
+}
+
+.avatar-large {
+  grid-area: x;
+
+  vertical-align: middle;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.avatar {
+  vertical-align: middle;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+/*Main Dashboard*/
+
+/*Layout Setup*/
+.dashboard {
+  height: 80%;
+  width: auto;
+
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+.dashboard > main {
+  grid-column-start: 1;
+}
+.dashboard > main > h2 {
+  padding: 20px 15px;
+  font-weight: 700;
+  font-size: 25px;
+}
+.dashboard > aside {
+
+}
+
+/*Cards Section*/
+.cards {
+    display: grid;
+    border: 1px solid red ;
+}
