@@ -339,11 +339,21 @@ input:hover {
   font-size: 25px;
 }
 .dashboard > aside {
-
 }
 
 /*Cards Section*/
 .cards {
-    display: grid;
-    border: 1px solid red ;
+  display: grid;
+  border: 1px solid red;
+  grid-template-rows: repeat(auto-fill, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+.card {
+    display: flex;
+    flex-direction: column;
+
+    height: 150px;
+    width: 300px;
+    border: 1px solid burlywood;
+    background-color: white;
 }
