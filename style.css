@@ -339,7 +339,68 @@ input:hover {
   font-size: 25px;
 }
 .dashboard > aside {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  height: 95%;
+  width: auto;
+
+  /* border: 2px darkslategrey solid; */
 }
+
+/*Aside*/
+aside > .section >  h2 {
+  font-weight: 700;
+  font-size: 25px;
+
+  padding: 20px 15px;
+}
+.section {
+  margin: 0 20px;
+}
+.announcements, .trending {
+  padding: 30px;
+  margin: 0 20px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 2px 2px 2px var(--gray);
+}
+.announcement > h3 {
+  font-weight: 700;
+  font-size: 20px;
+  padding: 10px 0;
+}
+.announcement {
+  line-height: 25px;
+}
+.trending {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.trending > .profile {
+  display: grid;
+  justify-content: flex-start;
+  column-gap: 20px;
+  grid-template-areas: 
+  "a b"
+  "a c"
+  ;
+  /* border: 1px magenta solid; */
+}
+.trending > .profile > img{
+  grid-area: a;
+}
+.trending > .profile > h3 {
+  font-weight: 500;
+  grid-area: b;
+}
+.trending > .profile > p {
+  grid-area: c;
+}
+
 
 /*Cards Section*/
 
@@ -356,12 +417,30 @@ input:hover {
 .card {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 
   height: 90%;
   width: 80%;
-  
+
   position: relative;
-  left: 10%; 
+  left: 10%;
   /* border: 1px solid burlywood; */
   background-color: white;
-} 
+
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px var(--gray);
+  border-left: 10px var(--yellow) solid;
+
+  padding: 0 20px;
+  overflow: hidden;
+}
+.card > .title {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
